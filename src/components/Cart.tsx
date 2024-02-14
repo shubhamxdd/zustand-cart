@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 import toast from "react-hot-toast";
 import Button from "./Button";
 import { Link } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 const Cart = () => {
   const { cart, clearCart } = useStore(cartStore);
@@ -30,10 +31,17 @@ const Cart = () => {
   return (
     <>
       <div className="mx-3 mt-1">
-        {cart && <h1 className="text-2xl">Cart total : $ {total}</h1>}
+        {cart && (
+          <h1 className="text-2xl">Cart total : $ {Math.round(total)}</h1>
+          // todo round 2 decimal places
+        )}
         <div className="flex flex-wrap gap-1 mt-4 mx-3">
           {cart.map((item) => (
-            <ProductCard item={item} fromCart key={item.id} />
+            <>
+              <AnimatePresence key={item.id}>
+                <ProductCard item={item} fromCart key={item.id} />
+              </AnimatePresence>
+            </>
           ))}
         </div>
       </div>
@@ -47,7 +55,6 @@ const Cart = () => {
         <Link to={"/checkout"}>
           <Button
             label="Checkout"
-            // onClick={}
             className="bg-blue-500  mb-20 mt-8 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all duration-300 ease-in-out"
           />
         </Link>

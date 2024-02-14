@@ -3,6 +3,7 @@ import { type Product } from "./ProductList";
 import cartStore from "../store/zustandStore";
 import toast from "react-hot-toast";
 import Button from "./Button";
+import { motion } from "framer-motion";
 
 interface Props {
   item: Product;
@@ -34,7 +35,11 @@ const ProductCard = ({ item, fromCart }: Props) => {
 
   return (
     <>
-      <div
+      <motion.div
+        initial={{ opacity: 1, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
         id={item.id.toString()}
         className="mb-3 flex flex-col items-center justify-center border-2 border-gray-300 p-6 rounded-lg shadow-lg mx-auto w-full sm:w-[50%] md:w-[40%] lg:w-[30%] xl:w-[20%]"
       >
@@ -79,7 +84,7 @@ const ProductCard = ({ item, fromCart }: Props) => {
             />
           )}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
