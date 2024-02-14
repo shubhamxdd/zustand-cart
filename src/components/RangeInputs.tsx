@@ -18,6 +18,12 @@ const RangeInput = ({
   setMaxFilterAmtVal,
   setMinFilterAmtVal,
 }: Props) => {
+  const setMaxFilterAmtValWithMinimum = (val: number) => {
+    if (val >= minFilterAmtVal) {
+      setMaxFilterAmtVal(val);
+    }
+  };
+
   return (
     <>
       {maxMin.min !== 0 && maxMin.min}
@@ -26,7 +32,10 @@ const RangeInput = ({
         <p>{minFilterAmtVal}</p>
       </div>
       <div className="flex flex-col items-center">
-        <Range maxMin={maxMin} setMinOrMaxFilterAmtVal={setMaxFilterAmtVal} />
+        <Range
+          maxMin={maxMin}
+          setMinOrMaxFilterAmtVal={setMaxFilterAmtValWithMinimum}
+        />
         <p>{maxFilterAmtVal}</p>
       </div>
       {maxMin.max !== 0 && maxMin.max}
