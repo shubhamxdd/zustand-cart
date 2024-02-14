@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Cart from "../components/Cart";
 import Navbar from "../components/Navbar";
 
 const pageVariants = {
@@ -15,7 +14,7 @@ const pageVariants = {
   },
 };
 
-const CartPage = () => {
+const CheckoutPage = () => {
   return (
     <>
       <Navbar />
@@ -26,10 +25,14 @@ const CartPage = () => {
         exit="exit"
         transition={{ duration: 0.5 }}
       >
-        <Cart />
+        <h1 className="text-center text-xl mt-2">
+          CheckoutPage is not implemented yet
+        </h1>
+        {/* Render items in cart as a list  */}
+        {/* TODO */}
       </motion.div>
     </>
   );
 };
 
-export default CartPage;
+export default CheckoutPage;
