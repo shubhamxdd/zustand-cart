@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 
+import Button from "../components/Button";
+import CheckoutList from "../components/CheckoutList";
+
 const pageVariants = {
   enter: {
     opacity: 1,
@@ -19,17 +22,14 @@ const CheckoutPage = () => {
     <>
       <Navbar />
       <motion.div
+        className="mx-3"
         variants={pageVariants}
         animate="enter"
         initial="exit"
         exit="exit"
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-center text-xl mt-2">
-          CheckoutPage is not implemented yet
-        </h1>
-        {/* Render items in cart as a list  */}
-        {/* TODO */}
+        <CheckoutList />
       </motion.div>
     </>
   );

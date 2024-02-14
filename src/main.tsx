@@ -8,6 +8,7 @@ import CartPage from "./pages/CartPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import CheckoutPage from "./pages/CheckoutPage.tsx";
 import { AnimatePresence } from "framer-motion";
+import ConfirmPage from "./pages/ConfirmPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/checkout",
     element: <CheckoutPage />,
+  },
+  {
+    path: "/confirmed",
+    element: <ConfirmPage />,
   },
 ]);
 
