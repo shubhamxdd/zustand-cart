@@ -36,7 +36,6 @@ const ProductList = () => {
       const maxPrice = Math.max(...dataF.map((item: Product) => item.price));
       const minPrice = Math.min(...dataF.map((item: Product) => item.price));
       setMaxMin({ max: maxPrice, min: minPrice });
-      console.log(maxMin);
 
       if (category) {
         setData(dataF.filter((item: Product) => item.category === category));

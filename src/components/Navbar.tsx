@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -5,19 +6,24 @@ const Navbar = () => {
     <>
       <div className="bg-stone-600 text-white px-8 p-4  flex justify-between items-center sticky top-0">
         <Link to={"/"}>
-          <h1 className="text-xl font-semibold">StoreName</h1>
+          <motion.h1
+            whileHover={{ scale: 1.1 }}
+            className="text-xl font-semibold"
+          >
+            StoreName
+          </motion.h1>
         </Link>
         <ul className="flex gap-4">
-          <li>
+          <motion.li whileHover={{ scale: 1.1 }}>
             <Link className="hover:underline" to={"/"}>
               Home
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1 }}>
             <Link className="hover:underline" to={"/cart"}>
               Cart
             </Link>
-          </li>
+          </motion.li>
         </ul>
       </div>
     </>
