@@ -32,8 +32,7 @@ const Cart = () => {
     <>
       <div className="mx-3 mt-1">
         {cart && (
-          <h1 className="text-2xl">Cart total : $ {Math.round(total)}</h1>
-          // todo round 2 decimal places
+          <h1 className="text-2xl">Cart total : $ {total.toFixed(2)}</h1>
         )}
         <div className="flex flex-wrap gap-1 mt-4 mx-3">
           {cart.map((item) => (
