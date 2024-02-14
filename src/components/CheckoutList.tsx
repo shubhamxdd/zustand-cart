@@ -2,7 +2,7 @@ import { useStore } from "zustand";
 import cartStore from "../store/zustandStore";
 import Button from "./Button";
 import toast from "react-hot-toast";
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CheckoutList = () => {
   const { cart, removeFromCart, clearCart } = useStore(cartStore);

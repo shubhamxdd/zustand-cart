@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 
-import Button from "../components/Button";
 import CheckoutList from "../components/CheckoutList";
 
 const pageVariants = {
